@@ -39,9 +39,8 @@ img {
     max-width: 100%;
     height: auto;
 }
-/* Контейнер */
+/* Контейнер (outline) */
 .container {
-    outline: 2px solid red;
     margin: 0 auto;
     max-width: 1158px;
     padding: 0 15px;
@@ -59,6 +58,18 @@ img {
   }
 .page-nav {
     display: flex;
+}
+.hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
 }
 /* logo */
 .logo {
@@ -89,7 +100,7 @@ img {
     margin-left: 40px;
 }
 .site-nav .link {
-    display: inline-block;
+    display: block;
     padding: 24px 0;
     font-weight: 500;
     font-size: 16px;
@@ -141,7 +152,6 @@ address {
     line-height: 1.071;
     letter-spacing: 0.02em;
     max-width: 496px;
-    text-align: center;
     color: var(--hero-color);
 }
 .hero-btn {
@@ -164,6 +174,10 @@ address {
     background-color: var(--clr-btn-hero-h-f);
 }           
 /* Секция 1 Feature */
+.feature {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
 .feature-ul {
     display: flex;
 }
@@ -174,7 +188,6 @@ address {
     margin-right: 24px;
 }
 .feature-list-title {
-    padding-top: 120px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -182,20 +195,22 @@ address {
     color: var(--clr-txt-sec-title);
 }
 .feature-list-text {
-    padding-top: 8px;
-    padding-bottom: 120px;
+    margin-top: 8px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--primery-text-color);
 }
 /* Секция 2 Working */
+.work {
+    padding-bottom: 120px;
+}
 .work-ul {
     display: flex;
 }
 .work-title {
     padding-top: 0;
-    padding-bottom: 72px;
+    margin-bottom: 72px;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.111;
@@ -207,15 +222,14 @@ address {
 .work-item {
     margin-right: 24px;
     padding-top: 72px;
-    padding-bottom: 120px;
 }
 .work-item:nth-child(3) {
     margin-right: 0; 
 }
 /* Секция 3 Team */
 .team {
-    margin-top: 0;
-    margin-bottom: 0;
+    padding-top: 120px;
+    padding-bottom: 120px;
     background-color: var(--clr-logoftr-base-team);
 }
 .team-ul {
@@ -223,15 +237,17 @@ address {
 }
 .team-list {
     margin-right: 24px;
-    padding-top: 72px;
-    padding-bottom: 120px;
+    flex-basis: calc((100% - 3 * 24px) / 4);
+}
+.team-list:nth-child(4) {
+    margin-right: 0;
 }
 .team-card-prof {
     display: block;
     text-align: center;
 }
 .team-name {
-    padding-top: 120px;
+    margin-bottom: 72px;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.111;
@@ -241,7 +257,7 @@ address {
     color: var(--clr-txt-sec-title);
 }
 .team-list-title {
-    margin-top: 0;
+    margin-top: 32px;
     margin-bottom: 8px;
     font-weight: 500;
     font-size: 20px;
