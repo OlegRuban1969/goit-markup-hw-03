@@ -5,6 +5,7 @@
     --clr-base: #FFFFFF;
     --clr-logoftr-base-team: #F4F4FD;
     --text-footer: #E7E9FC;
+    --border-header-cards: #E7E9FC;
     --clr-txt-hdr-list: #2E2F42;
     --clr-txt-address: #434455;
     --hero-color: #FFFFFF;
@@ -15,19 +16,54 @@
     --filters-btn-base: #F4F4FD;
     --filters-btn-border: #E7E9FC;
 }
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     color: var(--primery-text-color);
 }
+h1, h2, h3, p, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* Контейнер */
+.container {
+    outline: 2px solid red;
+    margin: 0 auto;
+    max-width: 1158px;
+    padding: 0 15px;
+}
 .list-ul {
     list-style-type: none;
 }
+/* Шапка */
 .page-header {
-    background-color: var(--clr-base); 
+    background-color: var(--clr-base);
+    border-bottom: 1px solid var(--border-header-cards); 
+}
+.page-header > .container {
+    display: flex;
+  }
+.page-nav {
+    display: flex;
 }
 /* logo */
 .logo {
+    display: inline-block;
+    padding: 24px 0;
     font-family: 'Raleway';
     font-weight: 800;
     font-size: 18px;
@@ -45,7 +81,16 @@ body {
     color: var(--clr-logoftr-base-team);
 }
 /* хедер-список */
+.site-nav {
+    display: flex;
+    margin-left: 76px;
+}
+.nav-item:not(:first-child), .addr-item:not(:first-child) {
+    margin-left: 40px;
+}
 .site-nav .link {
+    display: inline-block;
+    padding: 24px 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -56,8 +101,20 @@ body {
 .site-nav .link:hover, .site-nav .link:focus {
     color: var(--clr-header-h-f);
 }
+.site-nav .current {
+    color: var(--clr-header-h-f)
+}
 /* хедер-адреса */
+address {
+    margin-left: auto;
+}
+.page-contacts {
+    display: flex;
+}
 .page-contacts .link {
+    display: inline-block;
+    padding: 24px 0;
+    min-height: 24px;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
@@ -71,16 +128,25 @@ body {
 }
 /* Герой */
 .hero {
-        background-color: var(--clr-base-hero-ftr);
+    background-color: var(--clr-base-hero-ftr);
+    padding-top: 188px;
+    padding-bottom: 188px;
+    text-align: center;
 }
 .hero-title {
+    margin: 0 auto 48px;
+    text-align: center;
     font-weight: 700;
     font-size: 56px;
     line-height: 1.071;
     letter-spacing: 0.02em;
+    max-width: 496px;
+    text-align: center;
     color: var(--hero-color);
 }
 .hero-btn {
+    padding: 16px 32px;
+    margin: 0 auto 0;
     font-family: inherit;
     font-style: normal;
     font-weight: 500;
@@ -98,7 +164,17 @@ body {
     background-color: var(--clr-btn-hero-h-f);
 }           
 /* Секция 1 Feature */
+.feature-ul {
+    display: flex;
+}
+.feature-list {
+    flex-basis: calc((100% - 3 * 24px) / 4);
+}
+.feature-list:not(:last-child) {
+    margin-right: 24px;
+}
 .feature-list-title {
+    padding-top: 120px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -106,34 +182,67 @@ body {
     color: var(--clr-txt-sec-title);
 }
 .feature-list-text {
+    padding-top: 8px;
+    padding-bottom: 120px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--primery-text-color);
 }
 /* Секция 2 Working */
+.work-ul {
+    display: flex;
+}
 .work-title {
+    padding-top: 0;
+    padding-bottom: 72px;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.111;
     letter-spacing: 0.02em;
+    text-align: center;
+    text-transform: capitalize;
     color: var(--clr-txt-sec-title);
+}
+.work-item {
+    margin-right: 24px;
+    padding-top: 72px;
+    padding-bottom: 120px;
+}
+.work-item:nth-child(3) {
+    margin-right: 0; 
 }
 /* Секция 3 Team */
 .team {
+    margin-top: 0;
+    margin-bottom: 0;
     background-color: var(--clr-logoftr-base-team);
 }
+.team-ul {
+    display: flex;
+}
 .team-list {
-    background-color: var(--clr-base);
-}  
+    margin-right: 24px;
+    padding-top: 72px;
+    padding-bottom: 120px;
+}
+.team-card-prof {
+    display: block;
+    text-align: center;
+}
 .team-name {
+    padding-top: 120px;
     font-weight: 700;
     font-size: 36px;
     line-height: 1.111;
     letter-spacing: 0.02em;
+    text-align: center;
+    text-transform: capitalize;
     color: var(--clr-txt-sec-title);
 }
 .team-list-title {
+    margin-top: 0;
+    margin-bottom: 8px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -146,21 +255,39 @@ body {
     letter-spacing: 0.02em;
     color: var(--primery-text-color);
 }
+/* ФУТЕР */
 .basement {
     background-color: var(--clr-base-hero-ftr);
 }
+.baseblock {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
 .text-footer {
+    margin-top: 16px;
+    width: 264px;
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--text-footer);
 }
-/* Активная страница */
-.site-nav .current {
-    color: var(--clr-header-h-f)
-}
 /* ПОРТФОЛІО */
 /* Filters */
+.filters-list {
+    display: flex;
+}
+.filters-list {
+    justify-content: center;
+}
+.filters-item {
+    padding-top: 96px;
+    margin-right: 24px;
+    margin-bottom: 72px;
+}
+.filters-item:nth-child(5) {
+    margin-right: 0;
+}
 .filters-btn {
     font-family: inherit;
     font-style: normal;
@@ -182,16 +309,29 @@ body {
     background: var(--clr-btn-hero-h-f);
     color: var(--clr-base);
 }
-
-    
-/* Cards */
+ /* Cards */
 .cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 48px;
+    column-gap: 24px;
+    padding-bottom: 120px;
     background-color: var(--clr-base);
 }
+/* ВОПРОС ПО width */
 .cards-item {
     text-decoration: none;
 }
+.card-about {
+    display: block;
+    text-align: left;
+    border-left: 1px solid var(--border-header-cards);
+    border-bottom: 1px solid var(--border-header-cards);
+    border-right: 1px solid var(--border-header-cards);
+    
+}
 .cards-list-title {
+    padding-top: 32px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -199,6 +339,7 @@ body {
     color: var(--clr-txt-sec-title) 
 }
 .cards-list-text {
+    padding-top: 8px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
