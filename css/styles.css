@@ -237,7 +237,7 @@ address {
 .team-list {
     margin-right: 24px;
     flex-basis: calc((100% - 3 * 24px) / 4);
-    background-color: var(--clr-logoftr-base-team);
+    background-color: var(--clr-base);
 }
 .team-list:nth-child(4) {
     margin-right: 0;
