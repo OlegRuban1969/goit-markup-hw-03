@@ -1,4 +1,4 @@
-:root {
+ :root {
     --primery-text-color: #434455;
     --text-logo-base-btn-hero: #4D5AE5;
     --text-logo-header:#2E2F42;
@@ -23,16 +23,14 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
 }
 body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     color: var(--primery-text-color);
-}
-h1, h2, h3, p, ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
 }
 img {
     display: block;
@@ -74,11 +72,11 @@ img {
 /* logo */
 .logo {
     display: inline-block;
-    padding: 24px 0;
     font-family: 'Raleway';
     font-weight: 800;
     font-size: 18px;
     line-height: 1.333;
+    padding: 24px 0;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--text-logo-base-btn-hero);
@@ -223,7 +221,6 @@ address {
 }
 .work-item {
     margin-right: 24px;
-    padding-top: 72px;
 }
 .work-item:nth-child(3) {
     margin-right: 0; 
@@ -240,6 +237,7 @@ address {
 .team-list {
     margin-right: 24px;
     flex-basis: calc((100% - 3 * 24px) / 4);
+    background-color: var(--clr-logoftr-base-team);
 }
 .team-list:nth-child(4) {
     margin-right: 0;
@@ -247,8 +245,7 @@ address {
 .team-card-prof {
     display: block;
     text-align: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding: 32px 16px;
 }
 .team-name {
     margin-bottom: 72px;
@@ -261,7 +258,6 @@ address {
     color: var(--clr-txt-sec-title);
 }
 .team-list-title {
-    margin-top: 32px;
     margin-bottom: 8px;
     font-weight: 500;
     font-size: 20px;
@@ -308,9 +304,8 @@ address {
 }
 .filters-list {
     display: flex;
-}
-.filters-list {
     justify-content: center;
+    margin-bottom: 72px;
 }
 .filters-item {
     margin-right: 24px;
@@ -319,7 +314,6 @@ address {
     margin-right: 0;
 }
 .filters-btn {
-    margin-bottom: 72px;
     padding: 12px 24px;
     font-family: inherit;
     font-style: normal;
@@ -358,9 +352,7 @@ address {
 }
 .card-about {
     display: block;
-    padding-top: 32px; 
-    padding-bottom: 32px;
-    padding-left: 16px;
+    padding: 32px 16px; 
     text-align: left;
     border-left: 1px solid var(--border-header-cards);
     border-bottom: 1px solid var(--border-header-cards);
